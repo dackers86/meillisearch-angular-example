@@ -1,0 +1,16 @@
+<div>
+  <h2>Movies</h2>
+  <div class="search">
+    <label for="movie-name">movie name: </label>
+    <input type="text" [(ngModel)]="movieName" id="movie-name" />
+    <button (click)="search(this.movieName)">Search</button>
+  </div>
+
+  <ul class="movies">
+    <li *ngFor="let movie of movies?.results">
+      <span class="badge">{{ movie.id.raw || -1 }}</span>
+
+      <span class="name"> {{ movie.name.raw }} </span>
+    </li>
+  </ul>
+</div>
